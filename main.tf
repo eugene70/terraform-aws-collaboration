@@ -1,12 +1,12 @@
 terraform {
-  // cloud {
-  //   organization = "<MY_ORG_NAME>"         # 생성한 ORG 이름 지정
-  //   hostname     = "app.terraform.io"      # default
+  cloud {
+    organization = "Jacaranda"         # 생성한 ORG 이름 지정
+    hostname     = "app.terraform.io"      # default
 
-  //   workspaces {
-  //     name = "collaboration"  # 없으면 생성됨
-  //   }
-  // }
+    workspaces {
+      name = "collaboration"  # 없으면 생성됨
+    }
+  }
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -108,7 +108,7 @@ data "aws_ami" "ubuntu" {
   most_recent = true
 
   filter {
-    name = "name"
+    name   = "name"
     #values = ["ubuntu/images/hvm-ssd/ubuntu-disco-19.04-amd64-server-*"]
     values = ["ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*"]
   }
